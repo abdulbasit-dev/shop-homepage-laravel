@@ -15,7 +15,7 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::orderBy("created_at", "desc")->get();
-        return view("categories.index", compact("categories"));
+        return view("admin.categories.index", compact("categories"));
     }
 
     /**
@@ -25,7 +25,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view("categories.create");
+        return view("admin.categories.create");
     }
 
     /**
@@ -39,7 +39,7 @@ class CategoryController extends Controller
         Category::create([
             "name" => $request->name
         ]);
-        return redirect()->route("categories.index");
+        return redirect()->route("admin.categories.index");
     }
 
     /**
@@ -62,7 +62,7 @@ class CategoryController extends Controller
     public function edit(Category $category)
     {
 
-        return view("categories.edit", ["category" => $category]);
+        return view("admin.categories.edit", ["category" => $category]);
     }
 
     /**
@@ -77,7 +77,7 @@ class CategoryController extends Controller
         $category->update([
             "name" => $request->name
         ]);
-        return redirect()->route("categories.index");
+        return redirect()->route("admin.categories.index");
     }
 
     /**
@@ -89,6 +89,6 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         $category->delete();
-        return redirect()->route("categories.index");
+        return redirect()->route("admin.categories.index");
     }
 }

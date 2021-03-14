@@ -241,6 +241,7 @@ return [
             'label'       => 4,
             'label_color' => 'success',
         ],
+
         ['header' => 'account_settings'],
         [
             'text' => 'profile',
@@ -257,8 +258,14 @@ return [
             'icon'    => 'fas fa-fw fa-share',
             'submenu' => [
                 [
-                    'text' => 'level_one',
-                    'url'  => '#',
+                    'text'        => 'Products',
+                    'url'         => 'admin/products',
+                    'icon'        => 'fas  fa-boxes',
+                ],
+                [
+                    'text'        => 'Categories',
+                    'url'         => 'admin/categories',
+                    'icon'        => 'fas  fa-list',
                 ],
                 [
                     'text'    => 'level_one',

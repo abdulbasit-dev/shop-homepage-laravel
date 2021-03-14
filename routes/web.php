@@ -26,12 +26,20 @@ Route::get('/contact', function () {
 })->name("contact");
 
 
-// Route::middleware("auth")->group(function () {
+//admin routes
+// Route::group(["middleware" => "auth"], function () {
+//     Route::get('/admin', function () {
+//         return view('admin.index');
+//     });
 //     Route::resource("categories", "CategoryController");
 //     Route::resource("products", "ProductController");
 // });
 
-Route::group(["middleware" => "auth"], function () {
+//admin routes
+Route::middleware("auth")->prefix('admin')->group(function () {
+    Route::get('/', function () {
+        return view('admin.index');
+    });
     Route::resource("categories", "CategoryController");
     Route::resource("products", "ProductController");
 });
