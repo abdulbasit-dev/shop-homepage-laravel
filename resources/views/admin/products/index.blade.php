@@ -1,6 +1,7 @@
 @extends('adminlte::page')
+@section('title', 'All Products')
 @section('content')
-  <div class="col-lg-12">
+  <div class="col-lg-8 ">
     <h1 class="my-2">Products</h1>
     <a href="{{ route('products.create') }}">
       <button class="btn btn-info text-white mb-4">Add New Product</button>

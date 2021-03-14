@@ -1,4 +1,5 @@
 @extends('adminlte::page')
+@section('title', 'Edit Product')
 @section('content')
 
   <div class="col-lg-12">
@@ -59,7 +60,7 @@
           class="form-control form-control-lg"
           name="description"
           id="description">
-                    {{ $product->description }}</textarea>
+                      {{ $product->description }}</textarea>
       </div>
 
       <div class="custom-file mb-3">

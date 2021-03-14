@@ -1,4 +1,5 @@
 @extends('adminlte::page')
+@section('title', 'Create Product')
 @section('content')
 
   <div class="col-lg-12">
